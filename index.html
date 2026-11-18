@@ -1,10 +1,120 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Habitly</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habitly - Habit Tracker</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Habitly</h1>
-    <h2>Created by Ankita Chavan</h2>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">Habitly.</div>
+        <nav>
+            <a href="#">Dashboard</a>
+            <a href="#">My Habits</a>
+            <a href="#">Profile</a>
+        </nav>
+    </header>
+
+    <!-- Main Section -->
+    <main class="container">
+
+        <section class="welcome">
+            <h1>Good Morning! 👋</h1>
+            <p>Small steps every day lead to big results.</p>
+        </section>
+
+        <!-- Summary Statistics -->
+        <section class="stats">
+
+            <div class="stat-card">
+                <h3>Total Habits</h3>
+                <h2>05</h2>
+                <p>Habits you're tracking</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Completed Today</h3>
+                <h2>03</h2>
+                <p>Keep going!</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Current Streak</h3>
+                <h2>07 🔥</h2>
+                <p>Days in a row</p>
+            </div>
+
+        </section>
+
+        <!-- Habit Cards -->
+        <section class="habits-section">
+
+            <h2>My Daily Habits</h2>
+            <p class="subtitle">Build better habits, one day at a time.</p>
+
+            <div class="habit-grid">
+
+                <div class="habit-card">
+                    <div class="emoji">📚</div>
+                    <h3>Reading</h3>
+                    <p>Read for 30 minutes</p>
+                    <div class="progress">
+                        <div class="progress-fill" style="width: 80%;"></div>
+                    </div>
+                    <span>80% completed</span>
+                </div>
+
+                <div class="habit-card">
+                    <div class="emoji">💧</div>
+                    <h3>Drink Water</h3>
+                    <p>Drink 8 glasses</p>
+                    <div class="progress">
+                        <div class="progress-fill" style="width: 60%;"></div>
+                    </div>
+                    <span>60% completed</span>
+                </div>
+
+                <div class="habit-card">
+                    <div class="emoji">🏃</div>
+                    <h3>Exercise</h3>
+                    <p>Exercise for 30 minutes</p>
+                    <div class="progress">
+                        <div class="progress-fill" style="width: 100%;"></div>
+                    </div>
+                    <span>100% completed</span>
+                </div>
+
+                <div class="habit-card">
+                    <div class="emoji">💻</div>
+                    <h3>Coding</h3>
+                    <p>Practice coding daily</p>
+                    <div class="progress">
+                        <div class="progress-fill" style="width: 40%;"></div>
+                    </div>
+                    <span>40% completed</span>
+                </div>
+
+                <div class="habit-card">
+                    <div class="emoji">🧘</div>
+                    <h3>Meditation</h3>
+                    <p>Meditate for 10 minutes</p>
+                    <div class="progress">
+                        <div class="progress-fill" style="width: 70%;"></div>
+                    </div>
+                    <span>70% completed</span>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Habitly. Build your best self.</p>
+    </footer>
+
 </body>
 </html>
