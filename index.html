@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Habitly - Daily Habits</title>
+
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
@@ -12,12 +13,12 @@
     <header class="header">
         <div class="logo">
             <div class="logo-icon">🌱</div>
-            <h1>Habitly<span>.</span></h1>
+            <h1>habitly<span>.</span></h1>
         </div>
 
         <div class="date">
             <span class="date-icon">📅</span>
-            Wednesday, 18 November
+            <span id="currentDate"></span>
         </div>
     </header>
 
@@ -33,6 +34,16 @@
             <div class="welcome-emoji">✨</div>
         </section>
 
+        <!-- Daily Quote -->
+        <section class="motivation">
+            <div class="quote-icon">✦</div>
+            <div>
+                <h3 id="quoteText">Loading...</h3>
+                <p id="quoteAuthor">Getting your daily motivation...</p>
+            </div>
+        </section>
+
+        <!-- Statistics -->
         <section class="stats">
 
             <article class="stat-card">
@@ -40,37 +51,43 @@
                     <span>Done today</span>
                     <div class="stat-icon teal">✓</div>
                 </div>
-                <h3>3 <span>/ 6</span></h3>
+
+                <h3 id="doneCount">0 <span>/ 0</span></h3>
                 <p class="stat-note">Keep going! You're doing great.</p>
+
                 <div class="progress">
-                    <div class="progress-fill" style="width:50%"></div>
+                    <div class="progress-fill" id="progressFill"></div>
                 </div>
             </article>
 
             <article class="stat-card">
                 <div class="stat-top">
-                    <span>Best streak</span>
-                    <div class="stat-icon orange">🔥</div>
+                    <span>Total habits</span>
+                    <div class="stat-icon orange">🎯</div>
                 </div>
-                <h3>12 <span>days</span></h3>
-                <p class="stat-note">Your personal best so far!</p>
-                <div class="streak-highlight">🔥 12-day streak</div>
+
+                <h3 id="totalCount">0</h3>
+                <p class="stat-note">Every small habit matters.</p>
+                <div class="streak-highlight">🌱 Build your routine</div>
             </article>
 
             <article class="stat-card">
                 <div class="stat-top">
-                    <span>This week</span>
+                    <span>Remaining today</span>
                     <div class="stat-icon purple">📈</div>
                 </div>
-                <h3>78<span>%</span></h3>
-                <p class="stat-note">You're building consistency.</p>
+
+                <h3 id="remainingCount">0</h3>
+                <p class="stat-note">One step closer to your goals.</p>
+
                 <div class="progress">
-                    <div class="progress-fill purple-fill" style="width:78%"></div>
+                    <div class="progress-fill purple-fill" id="remainingFill"></div>
                 </div>
             </article>
 
         </section>
 
+        <!-- Habits -->
         <section class="habits-section">
 
             <div class="section-heading">
@@ -78,80 +95,50 @@
                     <h2>My daily habits</h2>
                     <p>Show up for yourself today.</p>
                 </div>
-                <span class="habit-count">6 HABITS</span>
+
+                <span class="habit-count" id="habitCount">0 HABITS</span>
             </div>
 
-            <div class="habit-grid">
+            <!-- Add Habit -->
+            <div class="add-habit-box">
 
-                <article class="habit-card">
-                    <div class="habit-emoji water">💧</div>
-                    <div class="habit-info">
-                        <h3>Drink water</h3>
-                        <p>Stay hydrated throughout the day</p>
-                    </div>
-                    <div class="habit-streak">🔥 7 days</div>
-                    <button class="complete-btn">✓ Complete</button>
-                </article>
+                <h3>✨ Create a new habit</h3>
 
-                <article class="habit-card">
-                    <div class="habit-emoji book">📚</div>
-                    <div class="habit-info">
-                        <h3>Read a book</h3>
-                        <p>Read at least 10 pages</p>
-                    </div>
-                    <div class="habit-streak">🔥 5 days</div>
-                    <button class="complete-btn">✓ Complete</button>
-                </article>
+                <form id="habitForm">
 
-                <article class="habit-card">
-                    <div class="habit-emoji workout">🏃</div>
-                    <div class="habit-info">
-                        <h3>Exercise</h3>
-                        <p>Move your body for 30 minutes</p>
-                    </div>
-                    <div class="habit-streak">🔥 12 days</div>
-                    <button class="complete-btn">✓ Complete</button>
-                </article>
+                    <input
+                        type="text"
+                        id="habitInput"
+                        placeholder="Enter your new habit..."
+                        maxlength="50"
+                    >
 
-                <article class="habit-card">
-                    <div class="habit-emoji coding">💻</div>
-                    <div class="habit-info">
-                        <h3>Learn coding</h3>
-                        <p>Practice coding every day</p>
-                    </div>
-                    <div class="habit-streak">🔥 4 days</div>
-                    <button class="complete-btn">✓ Complete</button>
-                </article>
+                    <button type="submit" class="add-btn">
+                        + Add Habit
+                    </button>
 
-                <article class="habit-card">
-                    <div class="habit-emoji meditate">🧘</div>
-                    <div class="habit-info">
-                        <h3>Meditate</h3>
-                        <p>Take 10 minutes for yourself</p>
-                    </div>
-                    <div class="habit-streak">🔥 3 days</div>
-                    <button class="complete-btn">✓ Complete</button>
-                </article>
+                </form>
 
-                <article class="habit-card">
-                    <div class="habit-emoji sleep">🌙</div>
-                    <div class="habit-info">
-                        <h3>Sleep on time</h3>
-                        <p>Get a good night's sleep</p>
-                    </div>
-                    <div class="habit-streak">🔥 6 days</div>
-                    <button class="complete-btn">✓ Complete</button>
-                </article>
+                <div class="emoji-picker">
+                    <span>Choose emoji:</span>
+
+                    <button type="button" class="emoji-btn selected" data-emoji="🌱">🌱</button>
+                    <button type="button" class="emoji-btn" data-emoji="💧">💧</button>
+                    <button type="button" class="emoji-btn" data-emoji="📚">📚</button>
+                    <button type="button" class="emoji-btn" data-emoji="🏃">🏃</button>
+                    <button type="button" class="emoji-btn" data-emoji="💻">💻</button>
+                    <button type="button" class="emoji-btn" data-emoji="🧘">🧘</button>
+                    <button type="button" class="emoji-btn" data-emoji="🎯">🎯</button>
+                    <button type="button" class="emoji-btn" data-emoji="🌙">🌙</button>
+                </div>
+
+                <p id="formMessage" class="form-message"></p>
 
             </div>
-        </section>
 
-        <section class="motivation">
-            <div class="quote-icon">✦</div>
-            <div>
-                <h3>Consistency beats perfection.</h3>
-                <p>You don't have to be perfect. Just keep showing up.</p>
-            </div>
+            <!-- JavaScript will create habit cards here -->
+            <div class="habit-grid" id="habitGrid"></div>
+
         </section>
 
     </main>
@@ -160,6 +147,8 @@
         <p>Built with 💚 by the <strong>CodGen Frontend Internship</strong></p>
         <a href="https://codgen.in" target="_blank">codgen.in</a>
     </footer>
+
+    <script src="script.js"></script>
 
 </body>
 </html>
